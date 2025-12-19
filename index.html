@@ -1,46 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Scientific Security Consultants - Security analysis, risk assessment, and strategic advisory services." />
   <title>Scientific Security Consultants</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      margin: 0;
-      padding: 40px;
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --text:#e6edf7;
+      --muted:#a9b7d0;
+      --accent:#3bb3ff;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1100px;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 10% -10%, rgba(59,179,255,.20), transparent 60%),
+                  radial-gradient(900px 600px at 90% 0%, rgba(82,255,199,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
     }
-    h1 {
-      color: #38bdf8;
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 70px;}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 0 18px;
     }
-    footer {
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #94a3b8;
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.4px;
     }
+    .dot{
+      width:12px;height:12px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), #52ffc7);
+      box-shadow: 0 0 18px rgba(59,179,255,.35);
+    }
+    nav{display:flex; gap:16px; flex-wrap:wrap}
+    nav a{
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:12px;
+    }
+    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+
+    .hero{
+      margin-top:10px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid var(--line);
+      background:#050a14;
+      position:relative;
+    }
+
+    /* Your cover image */
+    .hero img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+
+    .hero-overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.55));
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:absolute;
+      left:0; right:0;
+      bottom:0;
+      padding:22px 18px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height:1.15;
+      letter-spacing:.3px;
+    }
+    .hero p{
+      margin:10px 0 0;
+      color:var(--muted);
+      max-width: 62ch;
+      line-height:1.55;
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      font-weight:700;
+      letter-spacing:.2px;
+      min-width: 140px;
+    }
+    .btn:hover{background:rgba(255,255,255,.10)}
+    .btn.primary{
+      border-color: rgba(59,179,255,.35);
+      background: linear-gradient(135deg, rgba(59,179,255,.22), rgba(82,255,199,.12));
+    }
+
+    section{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+    }
+    @media (max-width: 860px){
+      section{grid-template-columns:1fr}
+      .hero-content{position:static; padding:18px}
+      .hero-overlay{display:none}
+      .cta{justify-content:flex-start}
+    }
+
+    .card{
+      background: rgba(15,27,51,.75);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow: 0 10px 35px rgba(0,0,0,.25);
+      padding:18px;
+    }
+    .card h2{margin:0 0 10px; font-size:18px; letter-spacing:.2px}
+    .card p{margin:0; color:var(--muted); line-height:1.6}
+
+    .list{
+      margin:10px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .list li{
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      color:var(--muted);
+    }
+    .list b{color:var(--text)}
+
+    footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid rgba(255,255,255,.10);
+      padding-top:16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:space-between;
+    }
+
+    .small{
+      font-size:12px;
+      color:rgba(169,183,208,.85);
+      line-height:1.5;
+    }
+
+    /* Simple anchor offsets */
+    html{scroll-behavior:smooth}
+    .anchor{scroll-margin-top:90px}
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Scientific Security Consultants</h1>
-    <p>
-      Professional consulting focused on security analysis, risk assessment,
-      and strategic advisory services.
-    </p>
 
-    <p>
-      Website currently under development.
-    </p>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Scientific Security Consultants</span>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero" role="banner" aria-label="Scientific Security Consultants cover">
+      <!-- Put your generated cover image in the same folder as this HTML and name it cover.png -->
+      <img src="cover.png" alt="Scientific Security Consultants cover banner" />
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div>
+          <h1>Security analysis. Risk assessment. Strategic advisory.</h1>
+          <p>
+            Practical, professional consulting for individuals and organizations that want clearer decisions,
+            tighter processes, and fewer surprises.
+          </p>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#contact">Request a consult</a>
+          <a class="btn" href="#services">View services</a>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="card anchor" id="services">
+        <h2>Core services</h2>
+        <ul class="list">
+          <li><b>Risk & threat assessments</b> — identify vulnerabilities and realistic exposure.</li>
+          <li><b>Security posture reviews</b> — policies, procedures, and practical improvements.</li>
+          <li><b>Incident planning</b> — response playbooks, checklists, and training recommendations.</li>
+          <li><b>Advisory consulting</b> — clear guidance for leadership decisions and planning.</li>
+        </ul>
+        <p class="small" style="margin-top:12px;">
+          (You can edit this list anytime — just change the text in <code>index.html</code>.)
+        </p>
+      </div>
+
+      <div class="card anchor" id="about">
+        <h2>About</h2>
+        <p>
+          Scientific Security Consultants provides straightforward advisory services focused on analysis,
+          risk reduction, and practical implementation. No fluff — just actionable recommendations.
+        </p>
+
+        <div style="height:12px"></div>
+
+        <h2>Quick notes</h2>
+        <ul class="list">
+          <li><b>Location:</b> Florida</li>
+          <li><b>Availability:</b> By appointment</li>
+          <li><b>Engagements:</b> Remote or on-site (as applicable)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="grid-template-columns:1fr;">
+      <div class="card anchor" id="contact">
+        <h2>Contact</h2>
+        <p>
+          Add your preferred contact method below. If you don’t want email exposed publicly, tell me and I’ll
+          set up a simple contact form route.
+        </p>
+
+        <div style="height:12px"></div>
+
+        <ul class="list">
+          <li><b>Email:</b> yourname@scientificsecurityconsultants.com</li>
+          <li><b>Phone:</b> (555) 555-5555</li>
+        </ul>
+
+        <p class="small" style="margin-top:12px;">
+          Replace the placeholder email/phone with your real info.
+        </p>
+      </div>
+    </section>
 
     <footer>
-      © 2025 Scientific Security Consultants
+      <div>© <span id="year"></span> Scientific Security Consultants</div>
+      <div class="small">All rights reserved.</div>
     </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
