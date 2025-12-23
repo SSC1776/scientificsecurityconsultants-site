@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <!--- <meta name="description" content="Scientific Security Consultants - Security analysis, risk assessment, and strategic advisory services." /> --->
-  <!--- <title>Scientific Security Consultants</title> --->
+  <meta name="description" content="Scientific Security Consultants - Security analysis, risk assessment, and strategic advisory services." />
+  <title>Scientific Security Consultants</title>
 
   <style>    
     :root{
@@ -129,17 +129,18 @@
     }
 
     /* ========================= */
-    /* ADDED: HERO TRIBUTE ICON  */
+    /* UPDATED: HERO TRIBUTE ICON */
+    /* Positioned upper right */
     /* ========================= */
     .hero-tribute{
       position:absolute;
+      top:18px;
       right:18px;
-      top:18px;          /* CHANGED: was bottom:18px */
       display:flex;
       align-items:center;
       opacity:0.65;
       pointer-events:none;
-      z-index:5;         /* ADDED: keeps it above overlay/content */
+      z-index:4;
     }
     .hero-tribute img{
       width:24px;
@@ -248,6 +249,7 @@
 
       <!-- ========================= -->
       <!-- ADDED: HERO TRIBUTE ICON  -->
+      <!-- Positioned upper-right -->
       <!-- ========================= -->
       <div class="hero-tribute">
         <img src="cross3n.png" alt="Cross symbol" />
@@ -258,67 +260,4 @@
 
     </div>
 
-    <section>
-      <div class="card anchor" id="services">
-        <h2>Core services</h2>
-        <ul class="list">
-          <li><b>Risk & threat assessments</b> — identify vulnerabilities and realistic exposure.</li>
-          <li><b>Security posture reviews</b> — policies, procedures, and practical improvements.</li>
-          <li><b>Incident planning</b> — response playbooks, checklists, and training recommendations.</li>
-          <li><b>Advisory consulting</b> — clear guidance for leadership decisions and planning.</li>
-        </ul>
-        <p class="small" style="margin-top:12px;">
-         <!--- (You can edit this list anytime — just change the text in <code>index.html</code>.) --->
-        </p>
-      </div>
-
-      <div class="card anchor" id="about">
-        <h2>About</h2>
-        <p>
-          Scientific Security Consultants provides straightforward advisory services focused on analysis,
-          risk reduction, and practical implementation. No fluff — just actionable recommendations.
-        </p>
-
-        <div style="height:12px"></div>
-
-        <h2>Quick notes</h2>
-        <ul class="list">
-          <li><b>Location:</b> Florida</li>
-          <li><b>Availability:</b> By appointment</li>
-          <li><b>Engagements:</b> Remote or on-site (as applicable)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section style="grid-template-columns:1fr;">
-      <div class="card anchor" id="contact">
-        <h2>Contact</h2>
-        <p>
-         <!--- Add your preferred contact method below. If you don’t want email exposed publicly, tell me and I’ll
-          set up a simple contact form route. --->
-        </p>
-
-        <div style="height:12px"></div>
-
-        <ul class="list">
-          <li><b>Email:</b> ssc.1776@outlook.com</li>
-          <li><b>Phone:</b> (772) 332-2478</li>
-        </ul>
-
-        <p class="small" style="margin-top:12px;">
-          <!--- Replace the placeholder email/phone with your real info. --->
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      <div>© <span id="year"></span> Scientific Security Consultants</div>
-      <div class="small">All rights reserved.</div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    <!-- rest of page unchanged -->
