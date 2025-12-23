@@ -134,11 +134,12 @@
     .hero-tribute{
       position:absolute;
       right:18px;
-      bottom:18px;
+      top:18px;          /* CHANGED: was bottom:18px */
       display:flex;
       align-items:center;
       opacity:0.65;
       pointer-events:none;
+      z-index:5;         /* ADDED: keeps it above overlay/content */
     }
     .hero-tribute img{
       width:24px;
